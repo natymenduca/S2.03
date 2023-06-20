@@ -1,0 +1,6 @@
+
+db.createCollection( 'cancionesSpotify', {validator: {$jsonSchema: {bsonType: 'object',title:'cancionesSpotify',required: [         '_idCanciones',          'titulo',          'tiempoDuracion',          'numVecesReprod',          'album',          'usuario'],properties: {_idCanciones: {bsonType: 'int'},titulo: {bsonType: 'string'},tiempoDuracion: {bsonType: 'decimal'},numVecesReprod: {bsonType: 'int'},album: {bsonType: 'array',items: {
+title:'object',required: [         'idAlbum',          'titulo',          'añoPublicac',          'imagenPortada',          'canciones',          'artista'],properties: {idAlbum: {bsonType: 'int'},titulo: {bsonType: 'string'},añoPublicac: {bsonType: 'date'},imagenPortada: {bsonType: 'string'},canciones: {bsonType: 'array',items: {}},artista: {bsonType: 'array',items: {
+title:'object',required: [         'id',          'nombre',          'albunes',          'estiloMusica'],properties: {id: {bsonType: 'int'},nombre: {bsonType: 'string'},albunes: {bsonType: 'array',items: {}}},
+patternProperties: {"estiloMusica": {bsonType: 'array',items: {
+title:'object',required: [         'id_artistas',          'estiloMusica'],properties: {id_artistas: {bsonType: 'int'},estiloMusica: {enum: (Country, pop,rock,funcky,rap, melodico, opera..)}}}}}}}}}},usuario: {bsonType: 'objectId'}}         }      }});  
